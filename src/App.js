@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MenuContainer from './containers/TabContainer.js';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        asdfasdfddff
-      </div>
+      <MenuContainer/>
     );
   }
 }
