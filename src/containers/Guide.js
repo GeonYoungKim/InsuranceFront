@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import SelectInsurance from '../components/common/SelectInsurance';
-
-
-
-
+import axios from 'axios';
 
 class GuideContainer extends Component {
     constructor(props) {
@@ -11,16 +8,26 @@ class GuideContainer extends Component {
     }
 
 
-    componentDidMount = ()=>{
-        
+    componentDidMount = () => {
+        const url = 'http://localhost:8080';
+
+        axios.post(url)
+            .then((response) => {
+                if (response.status === 200) {
+                    console.log(response.data);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
-    search = (value)=>{
+    search = (value) => {
         console.log(value);
     }
     render() {
         return (
             <div>
-                <SelectInsurance search={this.search}/>
+                <SelectInsurance search={this.search} />
             </div>
         );
     }
