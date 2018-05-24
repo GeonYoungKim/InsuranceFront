@@ -10,9 +10,9 @@ class TabComponent extends Component {
         return (
             <TabProvider defaultTab="one">
                     <TabList style={{marginTop:"50px"}}>
-                        <Tab style={{ width: "33%",height:"50px", backgroundColor: "#07f5e6" }} tabFor="one">지역별 분석</Tab>
-                        <Tab style={{ width: "33%", height:"50px", backgroundColor: "#D8D8D8" }} tabFor="two">처리구분별 분석</Tab>
-                        <Tab style={{ width: "33%",height:"50px", backgroundColor: "#D8D8D8" }} tabFor="three">월별 분석</Tab>
+                        <Tab style={{ width: "33%",height:"50px", backgroundColor: "#07f5e6" }} tabFor="one">보험 가이드</Tab>
+                        <Tab style={{ width: "33%", height:"50px", backgroundColor: "#D8D8D8" }} tabFor="two">보험 처리</Tab>
+                        <Tab style={{ width: "33%",height:"50px", backgroundColor: "#D8D8D8" }} tabFor="three">질문 게시판</Tab>
                     </TabList>
                     <br />
                     <div className="wrapper" >
