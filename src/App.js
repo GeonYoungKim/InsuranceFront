@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
-import './App.css';
-import TabComponent from './components/common/MainTab';
-import LoginComponent from './components/common/Header';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch
+} from 'react-router-dom';
+import Dashboard from './containers/Dashboard';
 
 
 class App extends Component {
   render() {
     return (
-          <div className="main-wrap">
-              <LoginComponent />
-              <TabComponent/>
-          </div>
+      <Router >
+        <div className="layout ">
+          <Switch>
+            <Route path="/dashboard/:job?/:view?/:id?" component={Dashboard} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

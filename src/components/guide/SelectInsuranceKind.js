@@ -9,12 +9,12 @@ class SelectInsuranceKind extends Component {
         this.state = {
             // 마우스 효과에 필요한 state 
             //hover: false,
-
         }
     }
 
-    handleClick = (value) => {
 
+    
+    handleClick = (value) => {
         this.props.selectCompany(value);
     }
 
@@ -31,15 +31,13 @@ class SelectInsuranceKind extends Component {
         let screen = null;
         if (this.props.kindData != null) {
             screen =
-                <div className="col-12 form-inline" style={{ marginBottom: "10px" }}>
+                <div className="col-12 form-inline" style={{ width:window.innerWidth,marginBottom: "10px",border:'1px solid black', borderRadius:'25px', marginLeft:'140px'}}>
                     {this.props.kindData.map((json) =>
-                        <div style={{ width: "33%", textAlign: "right" }}>
+                        <div style={{ width: "33%", textAlign: "center" }}>
                             <span className="mark--required" >*</span> <font style={{ cursor: "pointer" }} onClick={() => this.handleClick(json.id)}>{json.name}</font>
                         </div>)}
                 </div>
         }
-
-
         return (
             <div className="form-group row sc--table-row">
                 <div className="col-9 sc--table-col">

@@ -18,8 +18,9 @@ class GuideContainer extends Component {
         axios.get(url)
         .then((response) => {
             if (response.status === 200) {
-                
+                console.log(response);
                 this.setState({
+                    ...this.state,
                     kindListData:response.data
                 })
             }
@@ -36,9 +37,25 @@ class GuideContainer extends Component {
         axios.get(url)
             .then((response) => {
                 if (response.status === 200) {
+                    console.log(response);
                     this.setState({
-                        kindListData:JSON.parse(response.data)
-                    })
+                        ...this.state,
+                        companyListData:response.data
+                    })                   
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+    selectGuide=(kindCompanyId)=>{
+        const url='http://localhost:8080/guide/select/'+kindCompanyId;
+        axios.get(url)
+            .then((response) => {
+                if (response.status === 200) {
+                    console.log(response);
+                    
                 }
             })
             .catch((error) => {
@@ -47,10 +64,10 @@ class GuideContainer extends Component {
     }
     render() {
         
-        let companyScreen=(this.state.companyListData.length==0)?null:<SelectInsuranceCompany/>;
+        let companyScreen=(this.state.companyListData.length==0)?null:<SelectInsuranceCompany selectGuide={this.selectGuide} companyData={this.state.companyListData}/>;
         
         return (
-            <div>
+            <div style={{margin:'auto'}}>
                 <SelectInsuranceKind selectCompany={this.selectCompany} test="1" kindData={this.state.kindListData}/>
                 {companyScreen}
             </div>
