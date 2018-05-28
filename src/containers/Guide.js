@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SelectInsuranceKind from '../components/guide/SelectInsuranceKind';
 import axios from 'axios';
 import SelectInsuranceCompany from '../components/guide/SelectInsuranceCompany';
+import GuideCard from '../components/guide/GuideCard';
 
 class GuideContainer extends Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class GuideContainer extends Component {
         this.state = {
             kindListData:[],
             companyListData:[],
+            guideListData:[],
         }
     }
 
@@ -54,8 +56,11 @@ class GuideContainer extends Component {
         axios.get(url)
             .then((response) => {
                 if (response.status === 200) {
-                    console.log(response);
                     
+                    this.setState({
+                        ...this.state,
+                        guideListData:response.data
+                    }) 
                 }
             })
             .catch((error) => {
@@ -63,13 +68,14 @@ class GuideContainer extends Component {
             })
     }
     render() {
-        
+        console.log(this.state.guideListData);
         let companyScreen=(this.state.companyListData.length==0)?null:<SelectInsuranceCompany selectGuide={this.selectGuide} companyData={this.state.companyListData}/>;
-        
+        let guideScreen=(this.state.guideListData.length==0)?null:<GuideCard guideData={this.state.guideListData}/>;
         return (
             <div style={{margin:'auto'}}>
                 <SelectInsuranceKind selectCompany={this.selectCompany} test="1" kindData={this.state.kindListData}/>
                 {companyScreen}
+                {guideScreen}
             </div>
         );
     }
