@@ -53,6 +53,14 @@ render() {
                     </Card>
                 </div>
                 )}
+                {(this.props.tip!=null)?
+                    <div className="guide-card">
+                        <Card >
+                            <CardHeader><b style={{ margin: 'auto' }}>꿀팁</b></CardHeader>
+                            {this.props.tip.map((json)=><CardBody>{json.no}. {json.content}</CardBody>)}
+                        </Card>
+                    </div>:null}
+                
             </section>
     }
 

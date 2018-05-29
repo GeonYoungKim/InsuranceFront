@@ -12,6 +12,7 @@ class GuideContainer extends Component {
             kindListData:[],
             companyListData:[],
             guideListData:[],
+            tip:[],
         }
     }
 
@@ -56,10 +57,11 @@ class GuideContainer extends Component {
         axios.get(url)
             .then((response) => {
                 if (response.status === 200) {
-                    
+                    console.log(response.data);
                     this.setState({
                         ...this.state,
-                        guideListData:response.data
+                        guideListData:response.data.guide,
+                        tip:response.data.tip,
                     }) 
                 }
             })
@@ -70,7 +72,7 @@ class GuideContainer extends Component {
     render() {
         console.log(this.state.guideListData);
         let companyScreen=(this.state.companyListData.length==0)?null:<SelectInsuranceCompany selectGuide={this.selectGuide} companyData={this.state.companyListData}/>;
-        let guideScreen=(this.state.guideListData.length==0)?null:<GuideCard guideData={this.state.guideListData}/>;
+        let guideScreen=(this.state.guideListData.length==0)?null:<GuideCard guideData={this.state.guideListData} tip={this.state.tip}/>;
         return (
             <div style={{margin:'auto'}}>
                 <SelectInsuranceKind selectCompany={this.selectCompany} test="1" kindData={this.state.kindListData}/>
