@@ -41,7 +41,7 @@ class GuideContainer extends Component {
                 if (response.status === 200) {
                     console.log(response);
                     this.setState({  
-                        ...this.state.kindListData,                      
+                        guideListData:[],
                         companyListData:response.data
                     })                   
                 }
