@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import KindCss from './Kind.css';
+import KindCss from '../css/Kind.css';
 
 
 class SelectInsuranceKind extends Component {

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {
     Link
 } from 'react-router-dom';
-import GuideContainer from '../../containers/Guide';
-import MaintabCss from './MainTab.css';
+import GuideContainer from '../../../containers/Guide';
+import MaintabCss from '../css/MainTab.css';
+
 class TabComponent extends Component {
     constructor(props) {
         super(props);

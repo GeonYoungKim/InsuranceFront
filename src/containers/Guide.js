@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import SelectInsuranceKind from '../components/guide/SelectInsuranceKind';
 import axios from 'axios';
-import SelectInsuranceCompany from '../components/guide/SelectInsuranceCompany';
-import GuideCard from '../components/guide/GuideCard';
+import SelectInsuranceKind from '../components/guide/js/SelectInsuranceKind';
+import SelectInsuranceCompany from '../components/guide/js/SelectInsuranceCompany';
+import GuideCard from '../components/guide/js/GuideCard';
 
 class GuideContainer extends Component {
     constructor(props) {

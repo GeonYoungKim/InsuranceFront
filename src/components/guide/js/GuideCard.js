@@ -3,9 +3,9 @@ import { TabProvider, Tab, TabPanel, TabList } from 'react-web-tabs';
 import { Card, CardBody, CardHeader, CardFooter } from "react-simple-card";
 import axios from 'axios';
 import { stringify } from 'querystring';
-import GuideCardCss from './GuideCard.css';
-import previewImage from '../../img/preview.jpg';
-import downloadImage from '../../img/download.jpg';
+import GuideCardCss from '../css/GuideCard.css'
+import previewImage from '../../../img/preview.jpg';
+import downloadImage from '../../../img/download.jpg';
 
 
 class GuideCard extends Component {

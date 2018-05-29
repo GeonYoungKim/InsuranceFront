@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Guide from './Guide';
 import Process from './Process';
 import Question from './Question';
-import MainTab from '../components/common/MainTab';
-import Header from '../components/common/Header';
+import MainTab from '../components/common/js/MainTab';
+import Header from '../components/common/js/Header';
 
 class Dashboard extends Component {
     constructor(props) {

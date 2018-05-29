@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CompanyCss from './Company.css';
+import CompanyCss from '../css/Company.css';
 
 
 class SelectInsuranceCompany extends Component {

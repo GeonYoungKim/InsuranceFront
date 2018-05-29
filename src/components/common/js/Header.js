@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TabProvider, Tab, TabPanel, TabList } from 'react-web-tabs';
-import logo from '../../img/logo.jpg';
-import HeaderCss from './Header.css';
+import logo from '../../../img/logo.jpg';
+import HeaderCss from '../css/Header.css';
 class LoginComponent extends Component {
     constructor(props) {
         super(props);
