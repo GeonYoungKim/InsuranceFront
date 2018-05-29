@@ -40,10 +40,10 @@ class GuideCard extends Component {
 
 render() {
     let screen = null;
-
+    
     if (this.props.guideData != null) {
         screen =
-            <section className="col-12 guide-section" style={{ height: window.innerHeight}}>
+            <table className="col-12 guide-section" style={{ height:window.innerHeight}}>
                 {this.props.guideData.map((json) =>
                 <div className="guide-card">
                     <Card >
@@ -60,8 +60,31 @@ render() {
                             {this.props.tip.map((json)=><CardBody>{json.no}. {json.content}</CardBody>)}
                         </Card>
                     </div>:null}
-                
-            </section>
+                    <div className="guide-card">
+                    <Card >
+                            <CardHeader><b style={{ margin: 'auto' }}>꿀팁</b></CardHeader>
+                            <CardBody>asdf</CardBody>
+                        </Card>
+                        </div>
+                        <div className="guide-card">
+                    <Card >
+                            <CardHeader><b style={{ margin: 'auto' }}>꿀팁</b></CardHeader>
+                            <CardBody>asdf</CardBody>
+                        </Card>
+                        </div>
+                        <div className="guide-card">
+                    <Card >
+                            <CardHeader><b style={{ margin: 'auto' }}>꿀팁</b></CardHeader>
+                            <CardBody>asdf</CardBody>
+                        </Card>
+                        </div>
+                        <div className="guide-card">
+                    <Card >
+                            <CardHeader><b style={{ margin: 'auto' }}>꿀팁</b></CardHeader>
+                            <CardBody>asdf</CardBody>
+                        </Card>
+                        </div>
+            </table>
     }
 
     return (
