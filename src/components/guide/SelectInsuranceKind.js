@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import KindCss from './Kind.css';
 
 
 class SelectInsuranceKind extends Component {
@@ -31,9 +31,9 @@ class SelectInsuranceKind extends Component {
         let screen = null;
         if (this.props.kindData != null) {
             screen =
-                <div className="col-12 form-inline" style={{ width:window.innerWidth,marginBottom: "10px",border:'1px solid black', borderRadius:'25px', marginLeft:'140px'}}>
+                <div className="col-12 form-inline kind-section" style={{ width:window.innerWidth}}>
                     {this.props.kindData.map((json) =>
-                        <div style={{ width: "33%", textAlign: "center" }}>
+                        <div className="kind-div">
                             <span className="mark--required" >*</span> <font style={{ cursor: "pointer" }} onClick={() => this.handleClick(json.id)}>{json.name}</font>
                         </div>)}
                 </div>

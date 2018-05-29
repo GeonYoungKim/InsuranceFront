@@ -22,7 +22,6 @@ class GuideContainer extends Component {
             if (response.status === 200) {
                 console.log(response);
                 this.setState({
-                    ...this.state,
                     kindListData:response.data
                 })
             }
@@ -35,13 +34,14 @@ class GuideContainer extends Component {
     }
 
     selectCompany = (value) => {
+        console.log(value);
         const url='http://localhost:8080/guide/company/'+value;
         axios.get(url)
             .then((response) => {
                 if (response.status === 200) {
                     console.log(response);
-                    this.setState({
-                        ...this.state,
+                    this.setState({  
+                        ...this.state.kindListData,                      
                         companyListData:response.data
                     })                   
                 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import CompanyCss from './Company.css';
 
 
 class SelectInsuranceCompany extends Component {
@@ -31,9 +31,9 @@ class SelectInsuranceCompany extends Component {
         let screen = null;
         if (this.props.companyData != null) {
             screen =
-            <div className="col-12 form-inline" style={{ width:window.innerWidth,marginBottom: "5px",border:'1px solid black', marginLeft:'140px'}}>
+            <div className="col-12 form-inline company-section" style={{ width:window.innerWidth}}>
                     {this.props.companyData.map((json) =>
-                        <div style={{ width: "33%", textAlign: "center" }}>
+                        <div className="company-div">
                             <span className="mark--required" >*</span> <font style={{ cursor: "pointer" }} onClick={() => this.handleClick(json.id)}>{json.name}</font>
                         </div>)}
                 </div>

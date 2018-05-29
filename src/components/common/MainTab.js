@@ -3,26 +3,26 @@ import {
     Link
 } from 'react-router-dom';
 import GuideContainer from '../../containers/Guide';
-
+import MaintabCss from './MainTab.css';
 class TabComponent extends Component {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <div style={{ marginTop: "50px" }}>
+            <div className="my-maintab">
                 <Link to="/dashboard/guide" >
-                    <button style={{ float: 'left', width: '33%', height: '50px' }}>
+                    <button>
                         보험 가이드
                     </button>
                 </Link>
                 <Link to="/dashboard/process" >
-                    <button style={{ float: 'left', width: '33%', height: '50px' }}>
+                    <button>
                         보험 처리
                     </button>
                 </Link>
                 <Link to="/dashboard/question" >
-                    <button style={{ float: 'left', width: '33%', height: '50px' }}>
+                    <button>
                         질문 게시판
                     </button>
                 </Link>

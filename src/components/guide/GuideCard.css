@@ -1,0 +1,21 @@
+.guide-section{
+    padding-top: 0px;
+    width: 100%;
+    border: 1px solid black;
+    margin-left: 140px;
+}
+
+.guide-card{
+    float: left;
+    width: 33.3%;
+    height: 33%;
+    border: 1px solid black;
+    margin-top: 2px;
+}
+
+.guide-font{
+    text-align: left;
+}
+.guide-img{
+    margin-left: 15px;
+}

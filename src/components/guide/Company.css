@@ -1,0 +1,9 @@
+.company-section{
+    margin-bottom: 5px;
+    border: 1px solid black;
+    margin-left: 140px;
+}
+.company-div{
+    width: 33%;
+    text-align: center;
+}

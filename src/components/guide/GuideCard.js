@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { TabProvider, Tab, TabPanel, TabList } from 'react-web-tabs';
 import { Card, CardBody, CardHeader, CardFooter } from "react-simple-card";
 import axios from 'axios';
+import { stringify } from 'querystring';
+import GuideCardCss from './GuideCard.css';
 import previewImage from '../../img/preview.jpg';
 import downloadImage from '../../img/download.jpg';
-import { stringify } from 'querystring';
+
 
 class GuideCard extends Component {
     constructor(props) {
@@ -41,13 +43,15 @@ render() {
 
     if (this.props.guideData != null) {
         screen =
-            <section className="col-12" style={{ paddingTop: '0px', height: window.innerHeight, width: '100%', border: '1px solid black', marginLeft: '140px' }}>
+            <section className="col-12 guide-section" style={{ height: window.innerHeight}}>
                 {this.props.guideData.map((json) =>
-                    <Card style={{ float: 'left', width: '33.3%', height: '33%', border: '1px solid black', marginTop: '2px' }}>
+                <div className="guide-card">
+                    <Card >
                         <CardHeader><b style={{ margin: 'auto' }}>{json.guideNo}. {json.guideTitle}</b></CardHeader>
-                        {json.guideContents.map((contentJson) => (contentJson.no != 0) ? <CardBody><font style={{ textAlign: 'left' }}>{contentJson.no}. {contentJson.content}</font><br /></CardBody> : null)}
-                        {json.guideFiles.map((fileJson) => (fileJson.no != 0) ? <CardFooter><font style={{ textAlign: 'left' }}> - {fileJson.title}</font><img style={{ marginLeft: '15px' }} src={previewImage} /><img style={{ marginLeft: '15px' }} onClick={() => this.download(json.kind_company_id, json.guideNo, fileJson.no,fileJson.title)} src={downloadImage} /><br /></CardFooter> : null)}
+                        {json.guideContents.map((contentJson) => (contentJson.no != 0) ? <CardBody><font className="guide-font">{contentJson.no}. {contentJson.content}</font><br /></CardBody> : null)}
+                        {json.guideFiles.map((fileJson) => (fileJson.no != 0) ? <CardFooter><font className="guide-font"> - {fileJson.title}</font><img className="guide-img" src={previewImage} /><img className="guide-img" onClick={() => this.download(json.kind_company_id, json.guideNo, fileJson.no,fileJson.title)} src={downloadImage} /><br /></CardFooter> : null)}
                     </Card>
+                </div>
                 )}
             </section>
     }
