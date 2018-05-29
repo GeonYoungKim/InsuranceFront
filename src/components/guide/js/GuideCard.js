@@ -53,7 +53,7 @@ render() {
                     </Card>
                 </div>
                 )}
-                {(this.props.tip!=null)?
+                {(this.props.tip.length!=0)?
                     <div className="guide-card">
                         <Card >
                             <CardHeader><b style={{ margin: 'auto' }}>꿀팁</b></CardHeader>
