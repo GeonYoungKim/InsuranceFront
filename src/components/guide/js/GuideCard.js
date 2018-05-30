@@ -57,7 +57,7 @@ class GuideCard extends Component {
         
         if (this.props.guideData != null) {
             screen =
-                <table className="col-12 guide-section" style={{ height: window.innerHeight }}>
+                <table className="col-12 guide-section" style={{ height: window.innerHeight}}>
                     {this.props.guideData.map((json) =>
                         <div className="guide-card">
                             <Card >

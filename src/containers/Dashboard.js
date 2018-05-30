@@ -1,9 +1,29 @@
 import React, { Component } from 'react';
-import Guide from './Guide';
-import Process from './Process';
-import Question from './Question';
-import MainTab from '../components/common/js/MainTab';
-import Header from '../components/common/js/Header';
+import Loadable from 'react-loadable';
+
+const Loading = () => <div>Loading...</div>;
+
+const Guide=Loadable({
+    loader:()=>import('./Guide'),
+    loading:Loading,
+})
+const Process=Loadable({
+    loader:()=>import('./Process'),
+    loading:Loading,
+})
+const Question=Loadable({
+    loader:()=>import('./Question'),
+    loading:Loading,
+})
+const MainTab=Loadable({
+    loader:()=>import('../components/common/js/MainTab'),
+    loading:Loading,
+})
+const Header=Loadable({
+    loader:()=>import('../components/common/js/Header'),
+    loading:Loading,
+})
+
 
 class Dashboard extends Component {
     constructor(props) {

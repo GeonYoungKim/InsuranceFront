@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 class GuideModal extends Component {
     render() {
 
-        let serverAccess = "http://localhost:8080/";
+        let serverAccess = "http://localhost:8080/resources/img/";
         const customStyles = {
             content: {
                 left: '20%',

@@ -16,7 +16,18 @@ class GuideContainer extends Component {
         }
     }
 
+    componentWillReceiveProps =()=>{
+        this.setState({
+            kindListData:[],
+            companyListData:[],
+            guideListData:[],
+            tip:[],
+        })
+        this.componentDidMount();
+    }
+
     componentDidMount = () => {
+        
         const url='http://localhost:8080/guide/kind';
         axios.get(url)
         .then((response) => {
