@@ -75,6 +75,7 @@ class GuideContainer extends Component {
         let guideScreen=(this.state.guideListData.length==0)?null:<GuideCard guideData={this.state.guideListData} tip={this.state.tip}/>;
         return (
             <div style={{margin:'auto'}}>
+            
                 <SelectInsuranceKind selectCompany={this.selectCompany} test="1" kindData={this.state.kindListData}/>
                 {companyScreen}
                 {guideScreen}
