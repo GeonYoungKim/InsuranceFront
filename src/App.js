@@ -6,7 +6,7 @@ import {
   Switch
 } from 'react-router-dom';
 import Dashboard from './containers/Dashboard';
-
+import Login from './containers/Login';
 
 class App extends Component {
   render() {
@@ -14,6 +14,7 @@ class App extends Component {
       <Router >
         <div className="layout ">
           <Switch>
+            <Route exact path="/" component={Login} />
             <Route path="/dashboard/:job?/:view?/:id?" component={Dashboard} />
           </Switch>
         </div>
