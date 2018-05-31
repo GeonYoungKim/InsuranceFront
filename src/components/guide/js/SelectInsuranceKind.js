@@ -11,8 +11,6 @@ class SelectInsuranceKind extends Component {
             //hover: false,
         }
     }
-
-
     
     handleClick = (value) => {
         this.props.selectCompany(value);

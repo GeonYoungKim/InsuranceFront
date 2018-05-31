@@ -4,7 +4,6 @@ import { Card, CardBody, CardHeader, CardFooter } from "react-simple-card";
 import axios from 'axios';
 import { stringify } from 'querystring';
 import Img from 'react-image';
-import Lightbox from "react-image-lightbox";
 import GuideModal from './GuideModal';
 import GuideCardCss from '../css/GuideCard.css'
 import previewImage from '../../../img/preview.jpg';
@@ -25,8 +24,8 @@ class GuideCard extends Component {
         axios({
             url: 'http://localhost:8080/file/download',
             params: {
-                guide_id: kindCompanyId,
-                guide_no: guideNo,
+                guideId: kindCompanyId,
+                guideNo: guideNo,
                 no: guideFileNo
             },
             method: 'GET',

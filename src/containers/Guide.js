@@ -64,7 +64,9 @@ class GuideContainer extends Component {
     }
 
     selectGuide=(kindCompanyId)=>{
+        console.log(kindCompanyId);
         const url='http://localhost:8080/guide/select/'+kindCompanyId;
+        console.log(url);
         axios.get(url)
             .then((response) => {
                 if (response.status === 200) {
