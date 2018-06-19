@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from 'react-simple-card';
 import loginicon from '../../../img/icon--login.svg';
-import LoginFormCss from '../css/LoginForm.css';
+import LoginFormCss from '../css/Form.css';
 import { relative } from 'path';
 
 
-class LoginForm extends Component {
+class Form extends Component {
     constructor(props) {
         super(props);
     }
@@ -38,11 +37,11 @@ class LoginForm extends Component {
                 <div className="form-inline" style={{textAlign:"center"}}>
                     <div style={{width:"33.3%",height:"40px",border:"1px solid #BDBDBD"}}><button className="btn btn-primary btn-login" style={{width:"100%",height:"100%"}} >아이디 찾기</button></div>
                     <div style={{width:"33.3%",height:"40px",border:"1px solid #BDBDBD"}}><button className="btn btn-primary btn-login" style={{width:"100%",height:"100%"}} >비밀번호 찾기</button></div>
-                    <div style={{width:"33.3%",height:"40px",border:"1px solid #BDBDBD"}}><button className="btn btn-primary btn-login" style={{width:"100%",height:"100%"}} >회원가입</button></div>
+                    <div style={{width:"33.3%",height:"40px",border:"1px solid #BDBDBD"}}><button className="btn btn-primary btn-login" style={{width:"100%",height:"100%"}} onClick="" >회원가입</button></div>
                 </div>
             </div>
         );
     }
 }
 
-export default LoginForm;
+export default Form;

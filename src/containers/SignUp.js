@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/common/js/Header';
-import Form from '../components/login/js/Form';
+import Form from '../components/signup/js/Form';
 
 class Login extends Component {
     constructor(props) {

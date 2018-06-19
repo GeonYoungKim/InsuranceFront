@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Dashboard from './containers/Dashboard';
 import Login from './containers/Login';
+import SignUp from './containers/SignUp';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <div className="layout ">
           <Switch>
             <Route exact path="/" component={Login} />
+            <Route path="/signup" component={SignUp} />
             <Route path="/dashboard/:job?/:view?/:id?" component={Dashboard} />
           </Switch>
         </div>
