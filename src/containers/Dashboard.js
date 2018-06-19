@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import MainTab from '../components/common/js/MainTab';
+
+import Guide from './Guide';
+import Question from './Question';
 import Header from '../components/common/js/Header';
+import Process from './Process';
+import MainTab from '../components/common/js/MainTab';
 
 
 class Dashboard extends Component {
