@@ -8,6 +8,8 @@ import {
 import Dashboard from './containers/Dashboard';
 import Login from './containers/Login';
 import SignUp from './containers/SignUp';
+import FindId from './containers/FindId';
+import FindPassword from './containers/FindPassword';
 
 class App extends Component {
   render() {
@@ -17,6 +19,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/signup" component={SignUp} />
+            <Route path="/findId" component={FindId} />
+            <Route path="/findPassword" component={FindPassword} />
             <Route path="/dashboard/:job?/:view?/:id?" component={Dashboard} />
           </Switch>
         </div>

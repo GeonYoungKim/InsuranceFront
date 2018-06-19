@@ -3,7 +3,11 @@ import axios from 'axios';
 import { relative } from 'path';
 import loginicon from '../../../img/icon--login.svg';
 import LoginFormCss from '../css/Form.css';
-
+import {
+    Redirect,
+    Link,
+    withRouter
+} from 'react-router-dom';
 class Form extends Component {
     constructor(props) {
         super(props);
@@ -13,6 +17,7 @@ class Form extends Component {
             id:"",
             password:"",
             birth:"",
+            signUpStatus:false,
 
         };
 
@@ -52,10 +57,25 @@ class Form extends Component {
 
     sign = () =>{
         const url='http://localhost:8080/user/create';
-        axios.post(url)
+        axios.post(url,
+        {
+            id:this.state.id,
+            name:this.state.name,
+            password:this.state.password,
+            phone:this.state.phone,
+            birth:this.state.birth,
+        })
         .then((response) => {
             if (response.status === 200) {
-                console.log("성공");
+                if(response.data===true){
+                    alert("회원가입을 축하드립니다.");
+                    this.setState({
+                        ...this.state,signUpStatus:true
+                    });
+
+                }else{
+                    alert("오류로 인하여 회원가입이 취소되었습니다.");
+                }
             }
         })
         .catch((error) => {
@@ -89,6 +109,11 @@ class Form extends Component {
 
 
     render() {
+        if(this.state.signUpStatus){
+            return(
+                <Redirect to='/' />
+            );
+        }
         return (
             <div style={{ border: "1px solid #BDBDBD", width: "100%", height: "100%" }}>
                 <div id="needs-validation" noValidate style={{ paddingTop: "30px", paddingLeft: "30px", paddingRight: "30px" }}>

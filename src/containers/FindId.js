@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/common/js/Header';
 import Form from '../components/signup/js/Form';
 
-class SignUp extends Component {
+class FindId extends Component {
     constructor(props) {
         super(props);
     }
@@ -26,4 +26,4 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp;
+export default FindId;
