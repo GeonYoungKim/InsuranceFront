@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/common/js/Header';
-import Form from '../components/signup/js/Form';
+import Form from '../components/findid/js/Form';
 
 class FindId extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class FindId extends Component {
                     <section className="section-container sign-in-form">
                         <div className="sign-in-container">
                             <div className="container">
-                                <Form />
+                                <Form/>
                             </div>
                         </div>
                     </section>
