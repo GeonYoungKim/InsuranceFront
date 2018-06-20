@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MainTab from '../components/common/js/MainTab';
 import Header from '../components/common/js/Header';
+import FindPage from './FindPage';
 
 
 class Dashboard extends Component {
@@ -25,6 +26,9 @@ class Dashboard extends Component {
 
         let screen = null;
         
+        if(jobName==="findId"){
+            screen=<FindPage id={view}/>;
+        }
 
         return (
             <main>

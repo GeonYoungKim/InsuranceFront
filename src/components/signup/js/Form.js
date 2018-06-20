@@ -59,11 +59,12 @@ class Form extends Component {
         const url='http://localhost:8080/user/create';
         axios.post(url,
         {
-            id:this.state.id,
+            username:this.state.id,
             name:this.state.name,
             password:this.state.password,
             phone:this.state.phone,
             birth:this.state.birth,
+            email:this.state.email
         })
         .then((response) => {
             if (response.status === 200) {
@@ -137,6 +138,9 @@ class Form extends Component {
                         </div>
                         <div className="col-12 input input-password" style={{ padding: "10px" }}>
                             <input className="form-control" type="text" name="phone" placeholder="핸드폰번호" onChange={this.handleChange} required />
+                        </div>
+                        <div className="col-12 input input-password" style={{ padding: "10px" }}>
+                            <input className="form-control" type="text" name="email" placeholder="이메일" onChange={this.handleChange} required />
                         </div>
                         <div className="col-12 button-group" style={{ padding: "10px" }}>
                             <button className="btn btn-primary btn-login" onClick={this.check}>
